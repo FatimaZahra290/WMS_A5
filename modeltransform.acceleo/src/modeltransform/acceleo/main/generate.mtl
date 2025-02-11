@@ -1,0 +1,73 @@
+[comment encoding = UTF-8 /]
+[module generate('https://MDE_WasteManagement')]
+
+[import org.eclipse.emf.ecore.util.EcoreUtil /]
+
+[template public generateElement(aCity : WasteCollectionCity)] 
+
+[file ('index.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waste Collection System</title>
+</head>
+<body>
+    <h1>Waste Collection Routes</h1>
+    <ul>
+    [for (route : CollectionRoute | aCity.CollectionRoute)]
+        <li><a href="route_[route.RoutePoint.replace(' ', '_')].html">[route.RoutePoint/]</a></li>
+    [/for]
+    </ul>
+</body>
+</html>
+[/file]
+
+
+[template public generateRoute(aRoute : CollectionRoute)]
+[file ('route_' + aRoute.Name.replace(' ', '_') + '.html', false, 'UTF-8')]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Route - [aRoute.Name/]</title>
+</head>
+<body>
+    <h1>Waste Collection - Route: [aRoute.Name/]</h1>
+    
+    <h2>Route Coordinates</h2>
+    <p>[aRoute.RoutePoint.Address/]</p>
+
+    <h2>Waste Containers</h2>
+    <table border="1">
+        <tr>
+            <th>Container ID</th>
+            <th>Sensor Type</th>
+        </tr>
+        [for (point : RoutePoint | aRoute.RoutePoint)]
+            [for (container : WasteContainer | point.WasteContainer)]
+            <tr>
+                <td>Container at [point.Address/]</td>
+                <td>
+                    [for (sensor : Sensor | container.Sensor)]
+                        [sensor.SensorType.name/][if (sensor <> container.Sensor.last())], [endif]
+                    [/for]
+                </td>
+            </tr>
+            [/for]
+        [/for]
+    </table>
+
+    <h2>Assigned Vehicles</h2>
+    <ul>
+        [for (vehicle : Vehicle | aRoute.Vehicle)]
+        <li>Vehicle ID: [vehicle.ID/]</li>
+        [/for]
+    </ul>
+
+    <h2>Waste Processing Facility</h2>
+    <p>Status: [aRoute.WasteProcessingFacility.Capacity.name/]</p>
+
+    <p><a href="index.html">Back to Collection Routes</a></p>
+</body>
+</html>
+[/file]
+[/template]

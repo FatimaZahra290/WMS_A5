@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wm:CollectionRoute
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:wm="https://MDE_WasteManagement"
+    xsi:schemaLocation="https://MDE_WasteManagement /ModelTransformationsHomework/metamodels/WasteManagement.ecore"
+    Name="L'Aquila waste collection system "
+    City="L'aquila">
+  <Routepoint
+      Address="42.3496° N, 13.3995° E - Central L'Aquila">
+    <WasteContainer>
+      <Sensor
+          ID="SE12ULTR"/>
+      <Sensor
+          ID="SE65EWEI"
+          SensorType="Weight"/>
+      <Sensor
+          ID="SE28TEMP"
+          SensorType="Temperature"/>
+    </WasteContainer>
+    <WasteContainer
+        WasteType="Glass">
+      <Sensor
+          ID="SE30ULTR"/>
+      <Sensor
+          ID="SE09WEI"
+          SensorType="Weight"/>
+      <Sensor
+          ID="SETEMP"
+          SensorType="Temperature"/>
+    </WasteContainer>
+    <WasteContainer
+        WasteType="Mixed">
+      <Sensor
+          ID="SE89ULTR"/>
+      <Sensor
+          ID="SE28WEI"
+          SensorType="Weight"/>
+      <Sensor
+          ID="SE87TEMP"
+          SensorType="Temperature"/>
+    </WasteContainer>
+  </Routepoint>
+  <Routepoint
+      Address="42.3504° N, 13.3968° E -  the Basilica of San Bernardino">
+    <WasteContainer>
+      <Sensor
+          ID="SE90ULTR"/>
+      <Sensor
+          ID="SE76WEI"
+          SensorType="Weight"/>
+      <Sensor
+          ID="SE83TEMP"/>
+    </WasteContainer>
+    <WasteContainer
+        WasteType="Glass">
+      <Sensor
+          ID="SE28ULTR"/>
+      <Sensor
+          ID="SE29WEI"
+          SensorType="Weight"/>
+      <Sensor
+          ID="SE56TEMP"
+          SensorType="Temperature"/>
+    </WasteContainer>
+    <WasteContainer
+        WasteType="Mixed"/>
+  </Routepoint>
+  <Routepoint
+      Address="2.3463° N, 13.4061° E - the L'Aquila Cathedral">
+    <WasteContainer>
+      <Sensor
+          ID="SE35ULTR"/>
+      <Sensor
+          ID="SE98WEI"
+          SensorType="Weight"/>
+      <Sensor
+          ID="SE09ULTR"
+          SensorType="Temperature"/>
+    </WasteContainer>
+    <WasteContainer
+        WasteType="Glass">
+      <Sensor
+          ID="SE27ULTR"/>
+      <Sensor
+          ID="SE76WEI"
+          SensorType="Weight"/>
+      <Sensor
+          ID="SE19WEI"
+          SensorType="Temperature"/>
+    </WasteContainer>
+    <WasteContainer
+        WasteType="Mixed">
+      <Sensor
+          ID="SE71ULTR"/>
+      <Sensor
+          ID="SE34WEI"
+          SensorType="Weight"/>
+      <Sensor
+          ID="SE90WEI"/>
+    </WasteContainer>
+  </Routepoint>
+  <Vehicle ID="VE2971">
+    <Driver
+        Name="John Smith"
+        ID="D6142"/>
+  </Vehicle>
+  <Vehicle ID="VE2971">
+    <Driver
+        Name="Sandra Nmora"
+        ID="D2351"/>
+  </Vehicle>
+  <Scheduel
+      ID="Mon/Tue/Wed"/>
+</wm:CollectionRoute>

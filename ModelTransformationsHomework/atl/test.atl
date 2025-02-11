@@ -1,0 +1,18 @@
+module test;
+module SimpleTransformation;
+create OUT : WasteManagement from IN : WasteManagementOld;
+
+rule CollectionRouteMapping {
+    from 
+	
+        Route: WasteManagementOld!CollectionRoute
+    to
+        newRoute: WasteManagement!CollectionRoute (
+            name <- Route.name,
+            city <- Route.city,
+            routepoint <- Route.routepoint,
+            vehicle <- Route.vehicle,
+            wasteProcessingFacility <- Route.wasteProcessingFacility,
+            schedule <- thisModule.createDefaultSchedule()
+        )
+}

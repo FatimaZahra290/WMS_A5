@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="wasteManagement" nsURI="https://MDE_WasteManagement" nsPrefix="wm">
+  <eClassifiers xsi:type="ecore:EClass" name="CollectionRoute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Routepoint" upperBound="2"
+        eType="#//RoutePoint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Vehicle" upperBound="2"
+        eType="#//Vehicle" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="WasteProcessingFacility"
+        eType="#//WasteProcessingFacility" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="City" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Scheduel" upperBound="2"
+        eType="#//Scheduel" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RoutePoint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="WasteContainer" upperBound="2"
+        eType="#//WasteContainer" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scheduel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Timing" eType="#//Timing"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WasteContainer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="WasteType" eType="#//WasteType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="FillLevel" eType="#//FillLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Sensor" upperBound="2"
+        eType="#//Sensor" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WasteProcessingFacility">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Capacity" eType="#//Capacity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Vehicle">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Capacity" eType="#//Capacity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Driver" eType="#//Driver"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SensorType" eType="#//SensorType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Driver">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="WasteType">
+    <eLiterals name="Plastic" literal="Plastic"/>
+    <eLiterals name="Glass" value="1"/>
+    <eLiterals name="Mixed" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FillLevel">
+    <eLiterals name="Empty"/>
+    <eLiterals name="Halffull"/>
+    <eLiterals name="Full"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SensorType">
+    <eLiterals name="Ultrasonic"/>
+    <eLiterals name="Weight"/>
+    <eLiterals name="Temperature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Capacity">
+    <eLiterals name="Full" literal="Full"/>
+    <eLiterals name="Empty"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Timing">
+    <eLiterals name="MondayTuesdayWednesday" literal="MondayTuesdayWednesday"/>
+    <eLiterals name="ThursdayAndFriday" literal="ThuFri"/>
+    <eLiterals name="SaturdayAndSunday" literal="SaturdayAndSunday"/>
+  </eClassifiers>
+</ecore:EPackage>

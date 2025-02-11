@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wm:WasteCollectionCity
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:wm="https://MDE_WasteManagement"
+    xsi:schemaLocation="https://MDE_WasteManagement ../metamodels/WasteManagementOld.ecore"
+    Name="Rome">
+  <CollectionRoute>
+    <Routepoint
+        Address="41.9028° N, 12.4964° E">
+      <WasteContainer>
+        <WasteType>Mixed</WasteType>
+        <FillLevel>Empty</FillLevel>
+        <Sensor/>
+      </WasteContainer>
+      <WasteContainer>
+        <Sensor
+            SensorType="Weight"/>
+      </WasteContainer>
+    </Routepoint>
+    <Routepoint
+        Address="41.8894° N, 12.4791° E ">
+      <WasteContainer>
+        <WasteType>Mixed</WasteType>
+        <FillLevel>Halffull</FillLevel>
+        <Sensor
+            SensorType="Weight"/>
+      </WasteContainer>
+      <WasteContainer>
+        <WasteType>Mixed</WasteType>
+        <FillLevel>Full</FillLevel>
+      </WasteContainer>
+    </Routepoint>
+    <Vehicle
+        ID="V12749">
+      <Driver
+          Name="John "/>
+    </Vehicle>
+    <WasteProcessingFacility
+        Capacity="Empty"/>
+  </CollectionRoute>
+  <CollectionRoute>
+    <Routepoint
+        Address="41.8986° N, 12.4768° E">
+      <WasteContainer>
+        <Sensor/>
+      </WasteContainer>
+      <WasteContainer>
+        <WasteType>Mixed</WasteType>
+        <FillLevel>Empty</FillLevel>
+        <Sensor/>
+      </WasteContainer>
+    </Routepoint>
+    <Routepoint
+        Address="41.8986° N, 12.4768° E">
+      <WasteContainer>
+        <WasteType>Mixed</WasteType>
+        <FillLevel>Empty</FillLevel>
+        <Sensor
+            SensorType="Weight"/>
+      </WasteContainer>
+      <WasteContainer>
+        <WasteType>Mixed</WasteType>
+        <FillLevel>Empty</FillLevel>
+        <Sensor/>
+      </WasteContainer>
+    </Routepoint>
+    <Vehicle
+        ID="VE1820">
+      <Driver
+          Name="Kim "/>
+    </Vehicle>
+    <WasteProcessingFacility/>
+  </CollectionRoute>
+</wm:WasteCollectionCity>

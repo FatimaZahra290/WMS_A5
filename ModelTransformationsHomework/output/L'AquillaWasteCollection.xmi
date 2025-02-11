@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wm:WasteCollectionCity
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:wm="https://MDE_WasteManagement"
+    xsi:schemaLocation="https://MDE_WasteManagement ../metamodels/WasteManagementOld.ecore"
+    Name="L'Aquila">
+  <CollectionRoute>
+    <Routepoint
+        Address="42.3496° N, 13.3995° E - Central L'Aquila">
+      <WasteContainer>
+        <WasteType>Plastic</WasteType>
+        <FillLevel>Empty</FillLevel>
+        <Sensor/>
+        <Sensor
+            SensorType="Weight"/>
+        <Sensor
+            SensorType="Temperature"/>
+      </WasteContainer>
+      <WasteContainer>
+        <WasteType>Glass</WasteType>
+        <FillLevel>Empty</FillLevel>
+        <Sensor/>
+        <Sensor
+            SensorType="Weight"/>
+        <Sensor
+            SensorType="Temperature"/>
+      </WasteContainer>
+      <WasteContainer>
+        <WasteType>Mixed</WasteType>
+        <FillLevel>Full</FillLevel>
+        <Sensor/>
+        <Sensor
+            SensorType="Weight"/>
+        <Sensor
+            SensorType="Temperature"/>
+      </WasteContainer>
+    </Routepoint>
+    <Routepoint
+        Address="42.3504° N, 13.3968° E - the Basilica of San Bernardino.">
+      <WasteContainer>
+        <WasteType>Plastic</WasteType>
+        <FillLevel>Empty</FillLevel>
+        <Sensor/>
+        <Sensor
+            SensorType="Weight"/>
+        <Sensor
+            SensorType="Temperature"/>
+      </WasteContainer>
+      <WasteContainer>
+        <WasteType>Glass</WasteType>
+        <FillLevel>Empty</FillLevel>
+        <Sensor/>
+        <Sensor
+            SensorType="Weight"/>
+        <Sensor
+            SensorType="Temperature"/>
+      </WasteContainer>
+    </Routepoint>
+    <Routepoint
+        Address="42.3463° N, 13.4061° E -the L'Aquila Cathedral ">
+      <WasteContainer>
+        <WasteType>Plastic</WasteType>
+        <FillLevel>Empty</FillLevel>
+      </WasteContainer>
+      <WasteContainer>
+        <WasteType>Mixed</WasteType>
+        <FillLevel>Halffull</FillLevel>
+      </WasteContainer>
+    </Routepoint>
+    <Routepoint
+        Address="42.3542° N, 13.4057° E - the Spanish Fort (Forte Spagnolo).">
+      <WasteContainer>
+        <WasteType>Plastic</WasteType>
+        <FillLevel>Empty</FillLevel>
+      </WasteContainer>
+      <WasteContainer>
+        <WasteType>Mixed</WasteType>
+        <FillLevel>Full</FillLevel>
+      </WasteContainer>
+    </Routepoint>
+    <Vehicle
+        ID="VE1789">
+      <Driver
+          Name="John Smith"/>
+    </Vehicle>
+    <Vehicle
+        ID="VE2971">
+      <Driver
+          Name="Sandra Nmora"/>
+    </Vehicle>
+    <WasteProcessingFacility
+        Capacity="Empty"/>
+  </CollectionRoute>
+</wm:WasteCollectionCity>

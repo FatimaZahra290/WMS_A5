@@ -1,0 +1,69 @@
+module ModelMigration;
+
+create OUT : WasteManagement from IN : WasteManagementOld;
+
+rule CollectionRouteMapping {
+    from 	
+        Route: WasteManagementOld!CollectionRoute
+    to
+        newRoute: WasteManagement!CollectionRoute (
+            name <- Route.name,
+            city <- Route.city,
+            routepoint <- Route.routepoint,
+            vehicle <- Route.vehicle,
+            wasteProcessingFacility <- Route.wasteProcessingFacility,
+            schedule <- thisModule.createDefaultSchedule()
+        )
+}
+rule RoutePointMapping {
+    from
+        RoutePoint: WasteManagementOld!RoutePoint
+    to
+        newPoint: WasteManagement!RoutePoint (
+            address <- oldPoint.address,
+            wasteContainer <- oldPoint.wasteContainer
+        )
+}
+rule WasteContainerMapping {
+    from 
+        oldContainer: WasteManagementOld!WasteContainer
+    to
+        newContainer: WasteManagement!WasteContainer (
+            wasteType <- oldContainer.wasteType,
+            fillLevel <- oldContainer.fillLevel,
+            sensor <- oldContainer.sensor
+        )
+}
+rule VehicleMapping {
+    from
+        oldVehicle: WasteManagementOld!Vehicle
+    to
+        newVehicle: WasteManagement!Vehicle (
+            id <- oldVehicle.id,
+            driver <- oldVehicle.driver,
+            capacity <- oldVehicle.capacity
+        )
+}
+helper def : createDefaultSchedule() : WasteManagement!Schedule = 
+    WasteManagement!Schedule {
+        weekday <- WasteManagement!WeekDay::Monday
+    };
+rule SensorMapping {
+    from
+        oldSensor: WasteManagementOld!Sensor
+    to
+        newSensor: WasteManagement!Sensor (
+            sensorType <- oldSensor.sensorType
+        )
+}
+
+rule DriverMapping {
+    from
+        oldDriver: WasteManagementOld!Driver
+    to
+        newDriver: WasteManagement!Driver (
+            name <- oldDriver.name,
+            id <- oldDriver.id
+        )
+}
+    
